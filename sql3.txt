@@ -1,0 +1,21 @@
+Question: 
+Create a DB named "vtapp", create a db user named 'vtapp_user' and give him permissions to access vtappDB
+Note: Lets also set some password for the new user.
+
+Answer:
+mysql> create database vtapp;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> grant all
+    -> on vtapp.*
+    -> to 'vtapp_user' identified by 'tanshika123';
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> show grants for 'vtapp_user';
++-----------------------------------------------------------------------------------------------------------+
+| Grants for vtapp_user@%                                                                                   |
++-----------------------------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'vtapp_user'@'%' IDENTIFIED BY PASSWORD '*A9EAA2BB39C2FAB9E120DFACC1BABA3259BD7F38' |
+| GRANT ALL PRIVILEGES ON `vtapp`.* TO 'vtapp_user'@'%'                                                     |
++-----------------------------------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
